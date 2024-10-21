@@ -1,6 +1,6 @@
 # Introducción a Express.js
 
-<img src="img/programate-academy.png" alt="Logo Programate">
+<img src="img/JavierSanchez.png" alt="Header Javier">
 
 ## Objetivo
 
@@ -381,6 +381,6 @@ Finalmente probamos los endpoints:
 
 ## Contacto
 
-Si tienes alguna pregunta, sugerencia o deseas obtener el workbook para desarrollar este proyecto, no dudes en contactarme a través de: [jsanchez@educamas.com.co](jsanchez@educamas.com.co).
+Si tienes alguna pregunta, sugerencia o deseas obtener el workbook para desarrollar este proyecto, no dudes en contactarme a través de: [javisand89@gmail.com](javisand89@gmail.com.
 
 # node-basic-c9
