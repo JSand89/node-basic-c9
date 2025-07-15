@@ -34,7 +34,7 @@ Ahora vamos a crear un archivo llamado index.js
 ```
 touch index.js
 ```
-Vamos  a instalar nodemon para que nos recarge el servidor siempre que realicemos cambios 
+Vamos  a instalar nodemon para que nos recarge el servidor siempre que realicemos cambios (opcional)
 ```
 npm install nodemon --develop
 ```
@@ -70,6 +70,62 @@ node index.js
 ```
 Si abren el navegador y escriben la dirección 127.0.0.1:3005, encontrarán el clásico "Hola Mundo".
 
+## Prueba de Rutas
+
+Para Detectar errores en las rutas de los archivos de manera temprana vamos a empezar creando la carpeta routes 
+
+```
+mkdir routes
+touch routes/author.js
+```
+
+y vamos a poner el siguiente código
+```
+const express = requiere("express")
+const router = express.Router()
+router.get("/"),(req,res)=>{
+    console.log("hola desde rutas")
+    res.send("hola desde rutas")
+}
+module.exports = router
+``` 
+despues añadimos las siguientes lineas de código a app.js
+```
+// esto en las importaciones
+const authorRoutes = require("./routes/author.js")
+// esto encima del app.get
+app.use("/api/author/",authorRoutes)
+```
+
+y lo probamos en el navegador, debe aparecer el texto hola desde routes y el log esta en la consola donde se levanto el servidor.
+```
+127.0.0.1:3005/api/author/
+```
+
+## Prueba de Controlador
+Una vez el archivo router/author esta funcionando pasamos a el controlador creamos
+```
+mkdir controllers
+touch controllers/author.js
+```
+y ponemos el siguiente codigo:
+```
+exports.Hola = (req,res)=>{
+    console.log("Hola desde el controlador")
+    res.send("hola desde el controlador")
+}
+```
+modificamos el archivo rotes/author
+
+```
+const express = requiere("express)
+const authorControllers = requiere("../controllers/author")
+const router = express.Router()
+router.get("/",authorControllers.Hola)
+module.exports = router
+
+```
+y lo probamos en el navegador en la misma ruta anterior
 ## Documentación de MongoDB
 
 Van a crear la cuenta, esta es la documentación recomendada para MongoDB, aunque pueden encontrar más en línea.
